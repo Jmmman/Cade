@@ -2,6 +2,8 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+import com.sun.org.apache.xerces.internal.util.EntityResolver2Wrapper;
+
 public class Tester
 {
 	public static void main(String[] args)
@@ -21,9 +23,11 @@ public class Tester
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLayout(new GridLayout(2, 1));
 		frameception();
-	//insert bullshit here
-		
 		frame.setVisible(true);
+	
+		//here we start the game
+		startgame();
+		
 	}
 	
 	private void frameception()
@@ -41,12 +45,6 @@ public class Tester
 		frameB = new JInternalFrame();
 		frameB.setSize(500, 250);
 		frameB.setLayout(new GridLayout(1,10));
-		JButton test1 = new JButton("Test1");
-		JButton test2 = new JButton("Test2");
-		
-		frameB.add(test1);
-		frameB.add(test2);
-		
 		frameB.setBorder(null);
 		frame.add(frameB);
 		frameB.setVisible(true);
@@ -55,4 +53,12 @@ public class Tester
 	private JInternalFrame frameT;
 	private JInternalFrame frameB;
 	private JLabel label;
+
+	// in this method you can add buttons and do actual game logic
+	//should get called from setupGUI
+	private void startgame()
+	{
+	
+	}
+	
 }
