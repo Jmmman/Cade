@@ -2,7 +2,9 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+import com.sun.org.apache.bcel.internal.generic.NEW;
 import com.sun.org.apache.xerces.internal.util.EntityResolver2Wrapper;
+import com.sun.swing.internal.plaf.metal.resources.metal_zh_TW;
 
 public class Tester
 {
@@ -35,8 +37,7 @@ public class Tester
 		//top of the frame
 		frameT = new JInternalFrame();
 		frameT.setSize(500, 250);
-		label = new JLabel("test");
-		frameT.add(label);
+		frameT.add(topWindowText);
 		frameT.setBorder(null);
 		frame.add(frameT);
 		frameT.setVisible(true);
@@ -54,11 +55,89 @@ public class Tester
 	private JInternalFrame frameB;
 	private JLabel label;
 
-	// in this method you can add buttons and do actual game logic
+	// in this method you can add buttons and do actual game logic along with the Button event Listener
 	//should get called from setupGUI
 	private void startgame()
 	{
-	
+	 topWindowText.setText("Whats your name");
+ nameField = new JTextField();
+	 
+	 //text that gets put in the ActionEvent when button is pressed
+	 nameField.setActionCommand("nameField");
+	 frameB.add(nameField);
+	 nameField.addActionListener(new ButtonEventListener());
+	 refresh();
+	 
 	}
 	
+	//call this method after any changes to buttons or fields due to shitty Swing
+	private void refresh()
+	{
+
+		frame.validate();
+		frame.repaint();
+	}
+	
+	
+	
+	// class within a class
+	// WITHIN TESTER CLASS NOT EXTERIOR
+	class ButtonEventListener implements ActionListener
+	{
+
+		
+		//This method gets called when any button is pressed in any frame
+		//it gets passed an action event variable which we use to figure out what button was pressed
+		@Override
+		public void actionPerformed(ActionEvent arg0) 
+		{
+			
+			
+		if (arg0.getActionCommand().equals("nameField"))
+		{
+			playerName = nameField.getText();
+			frameB.remove(nameField);
+			topWindowText.setText("hello: " + playerName + " Chose a class");
+			button1.setText("Rogue");
+			button2.setText("Mage");
+			button1.setActionCommand("rogue");
+			button2.setActionCommand("mage");
+			button1.addActionListener(new ButtonEventListener());
+			button2.addActionListener(new ButtonEventListener());
+			frameB.add(button1);
+			frameB.add(button2);
+			refresh();
+			
+		}
+		
+		if (arg0.getActionCommand().equals("rogue"))
+		{
+			
+			//insert code here
+		}
+		
+		if (arg0.getActionCommand().equals("mage"))
+		{
+			
+			//insert code here
+		}
+		
+			
+		}
+		
+		
+	}
+	//every single button you want to use has to be defined as an instance field or it will not be usable
+	private JLabel topWindowText = new JLabel("WoW");
+	private String playerName = "";
+	JTextField nameField;
+	JButton button1 = new JButton();
+	JButton button2 = new JButton();
+	JButton button3 = new JButton();
+	
+	
 }
+
+
+
+
