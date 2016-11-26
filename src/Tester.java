@@ -1,76 +1,58 @@
-import java.awt.Container;
-import java.awt.EventQueue;
-import java.awt.event.ActionEvent;
+import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
-import java.awt.Dimension;
-import java.awt.Insets;
-import javax.swing.border.EmptyBorder;
 
-public class Tester extends JFrame
+public class Tester
 {
-	public Tester()
-	{
-		initUI();
-	}
-	private void initUI()
-	{
-		setTitle("Insert title here");
-		setSize(300, 200);
-		setLocationRelativeTo(null);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		
-		JButton aButton = new JButton("Alliance");
-		aButton.addActionListener((ActionEvent event) -> 
-		{
-			faction = true;
-		});
-		
-		JButton hButton = new JButton("Horde");
-		hButton.addActionListener((ActionEvent event) -> 
-		{
-			faction = false;
-		});
-		
-		createAllianceLayout(aButton, hButton);
-	}
-	private void createAllianceLayout(JComponent... arg)
-	{
-//		Container pane = getContentPane();
-//		GroupLayout g1 = new GroupLayout(pane);
-//		pane.setLayout(g1);
-//		
-//		g1.setAutoCreateContainerGaps(true);
-//		g1.setHorizontalGroup(g1.createSequentialGroup().addComponent(arg[0]));
-//		g1.setVerticalGroup(g1.createSequentialGroup().addComponent(arg[0]));
-		
-		JPanel panel = new JPanel();
-        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-
-        panel.setBorder(new EmptyBorder(new Insets(40, 60, 40, 60)));
-
-        panel.add(arg[0]);
-        panel.add(Box.createRigidArea(new Dimension(0, 5)));
-        panel.add(arg[1]);
-        panel.add(Box.createRigidArea(new Dimension(0, 5)));
-
-        add(panel);
-
-        pack();
-
-        setTitle("RigidArea");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
-		
-	}
 	public static void main(String[] args)
 	{
-		EventQueue.invokeLater(() -> 
-		{
-			Tester a = new Tester();
-			a.setVisible(true);
-		});
+		Tester a = new Tester();
 	}
-	// true == Alliance and false == Horde
-	private boolean faction;
-	private String race;
+	
+	public Tester()
+	{
+		setupGUI();
+	}
+	
+	private void setupGUI()
+	{
+		frame = new JFrame("WoW");
+		frame.setSize(500, 500);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setLayout(new GridLayout(2, 1));
+		frameception();
+	//insert bullshit here
+		
+		frame.setVisible(true);
+	}
+	
+	private void frameception()
+	{
+		//top of the frame
+		frameT = new JInternalFrame();
+		frameT.setSize(500, 250);
+		label = new JLabel("test");
+		frameT.add(label);
+		frameT.setBorder(null);
+		frame.add(frameT);
+		frameT.setVisible(true);
+		
+		// bottom of the frame starts here
+		frameB = new JInternalFrame();
+		frameB.setSize(500, 250);
+		frameB.setLayout(new GridLayout(1,10));
+		JButton test1 = new JButton("Test1");
+		JButton test2 = new JButton("Test2");
+		
+		frameB.add(test1);
+		frameB.add(test2);
+		
+		frameB.setBorder(null);
+		frame.add(frameB);
+		frameB.setVisible(true);
+	}
+	private JFrame frame;
+	private JInternalFrame frameT;
+	private JInternalFrame frameB;
+	private JLabel label;
 }

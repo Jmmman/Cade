@@ -1,13 +1,13 @@
 import java.util.Scanner;
 public class Player 
 {
-	public Player(String fac, String rac)
+	public Player(boolean fac, String rac, String nam)
 	{
 		health = 100;
 		locX = 0;
 		locY = 0;
 		alive = true;
-		
+		faction = fac;
 	}
 	
 	public void moveUp()
@@ -45,6 +45,6 @@ public class Player
 	private boolean alive;
 	private String race;
 	private String name;
-	private String faction;
+	private boolean faction;
 	private Scanner in = new Scanner(System.in);
 }
