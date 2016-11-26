@@ -2,10 +2,6 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-import com.sun.org.apache.bcel.internal.generic.NEW;
-import com.sun.org.apache.xerces.internal.util.EntityResolver2Wrapper;
-import com.sun.swing.internal.plaf.metal.resources.metal_zh_TW;
-
 public class Tester
 {
 	public static void main(String[] args)
