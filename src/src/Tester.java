@@ -77,6 +77,11 @@ public class Tester
 	
 	private void defaultScreen()
 	{
+		
+		frameT.remove(topWindowText2);
+		frameT.remove(topWindowText3);
+		frameT.remove(topWindowText4);
+		frameT.remove(topWindowText5);
 		frameB.remove(button1);
 		frameB.remove(button2);
 		frameB.remove(button3);
@@ -145,6 +150,10 @@ public class Tester
 		
 		if (arg0.getActionCommand().equals("stats"))
 		{
+			frameT.remove(topWindowText2);
+			frameT.remove(topWindowText3);
+			frameT.remove(topWindowText4);
+			frameT.remove(topWindowText5);
 			frameB.remove(button1);
 			frameB.remove(button2);
 			frameB.remove(button3);
@@ -165,6 +174,10 @@ public class Tester
 	}
 	//every single button you want to use has to be defined as an instance field or it will not be usable
 	private JLabel topWindowText = new JLabel("WoW");
+	private JLabel topWindowText2 = new JLabel();
+	private JLabel topWindowText3 = new JLabel();
+	private JLabel topWindowText4 = new JLabel();
+	private JLabel topWindowText5 = new JLabel();
 	private String playerName = "";
 	JTextField nameField;
 	JButton button1 = new JButton();
