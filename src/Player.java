@@ -1,4 +1,4 @@
-import java.util.Scanner;
+
 public class Player 
 {
 	public Player(String nam)
@@ -7,24 +7,29 @@ public class Player
 		locX = 0;
 		locY = 0;
 		alive = true;
+		name = nam;
 	}
-	
-	public void moveUp()
-	{
-		locY--;
-	}
-	public void moveDown()
-	{
-		locY++;
-	}
-	public void moveLeft()
-	{
-		locX--;
-	}
-	public void moveRight()
+	public void move()
 	{
 		locX++;
+		locY++;
 	}
+//	public void moveUp()
+//	{
+//		locY--;
+//	}
+//	public void moveDown()
+//	{
+//		locY++;
+//	}
+//	public void moveLeft()
+//	{
+//		locX--;
+//	}
+//	public void moveRight()
+//	{
+//		locX++;
+//	}
 	
 	public int getX()
 	{
@@ -34,9 +39,21 @@ public class Player
 	{
 		return locY;
 	}
+	public void addX(int x)
+	{
+		locX += x;
+	}
+	public void addY(int y)
+	{
+		locY += y;
+	}
 	public int getHP()
 	{
 		return health;
+	}
+	public void damage(int hp)
+	{
+		health -= hp;
 	}
 	public String getName()
 	{
@@ -53,5 +70,4 @@ public class Player
 	private int locX;
 	private boolean alive;
 	private String name;
-	private Scanner in = new Scanner(System.in);
 }
