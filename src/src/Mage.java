@@ -7,6 +7,7 @@ public class Mage extends Player
 	{
 		super(name);
 		kills = 0;
+		gen = new Random();
 	}
 	public int getKill()
 	{
