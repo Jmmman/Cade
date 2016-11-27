@@ -26,6 +26,10 @@ public class Rogue extends Player
 		if (gen.nextInt(5) == 0)
 			getSteal();
 	}
+	public String getStats()
+	{
+		return super.getStats() + "Steals: " + steal;
+	}
 	private Random gen;
 	private int steal;
 }

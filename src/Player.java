@@ -65,6 +65,10 @@ public class Player
 			alive = false;
 		return alive;
 	}
+	public String getStats()
+	{
+		return "Name: " + name + "\n" + "HP: " + health + "\n" + "Location: " + getX() + ", " + getY() + "\n";
+	}
 	private int health;
 	private int locY;
 	private int locX;

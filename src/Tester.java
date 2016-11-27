@@ -73,7 +73,7 @@ public class Tester
 	}
 	
 	
-	private void defualtScreen()
+	private void defaultScreen()
 	{
 		frameB.remove(button1);
 		frameB.remove(button2);
@@ -123,27 +123,27 @@ public class Tester
 		if (arg0.getActionCommand().equals("rogue"))
 		{
 			
-				//set player to rogue by creating player object as ro
-				
-				defualtScreen();
+				//set player to Rogue by creating player object as Rogue
+				player = new Rogue(playerName);
+				defaultScreen();
 		}
 		
 		if (arg0.getActionCommand().equals("mage"))
 		{
 			
-				//set player to mage  by creating player object as mage
-			
-				defualtScreen();
+				//set player to Mage  by creating player object as Mage
+			player = new Mage(playerName);
+				defaultScreen();
 		}	
 		
 		if (arg0.getActionCommand().equals("move"))
 		{
-			
+			player.move();
 		}
 		
 		if (arg0.getActionCommand().equals("stats"))
 		{
-			
+			System.out.println(player.getStats());
 		}
 		
 		

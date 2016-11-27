@@ -25,6 +25,10 @@ public class Mage extends Player
 		if (gen.nextInt(8) == 0)
 			getKill();
 	}
+	public String getStats()
+	{
+		return super.getStats() + "Kills: " + kills;
+	}
 	private Random gen;
 	private int kills;
 }
