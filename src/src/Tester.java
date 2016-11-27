@@ -79,7 +79,7 @@ public class Tester
 		frameB.remove(button1);
 		frameB.remove(button2);
 		frameB.remove(button3);
-		topWindowText.setText("What would you like to do next");
+		topWindowText.setText("What do you want to do next?");
 		button1.setText("Move");
 		button1.setActionCommand("move");
 		frameB.add(button1);
@@ -144,7 +144,17 @@ public class Tester
 		
 		if (arg0.getActionCommand().equals("stats"))
 		{
-			System.out.println(player.getStats());
+			frameB.remove(button1);
+			frameB.remove(button2);
+			frameB.remove(button3);
+			topWindowText.setText(player.getStats() + "\n" + "\n" + "What do you want to do next?");
+			button1.setText("Move");
+			button1.setActionCommand("move");
+			frameB.add(button1);
+			button2.setText("Stats");
+			button2.setActionCommand("stats");
+			frameB.add(button2);
+			refresh();
 		}
 		
 		
