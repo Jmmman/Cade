@@ -34,6 +34,7 @@ public class Tester
 		//top of the frame
 		frameT = new JInternalFrame();
 		frameT.setSize(500, 250);
+		frameT.setLayout(new GridLayout(1,10));
 		frameT.add(topWindowText);
 		frameT.setBorder(null);
 		frame.add(frameT);
