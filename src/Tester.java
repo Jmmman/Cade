@@ -49,8 +49,6 @@ public class Tester
 	private JFrame frame;
 	private JInternalFrame frameT;
 	private JInternalFrame frameB;
-	private JLabel label;
-
 	// in this method you can add buttons and do actual game logic along with the Button event Listener
 	//should get called from setupGUI
 	private void startgame()
@@ -74,6 +72,22 @@ public class Tester
 		frame.repaint();
 	}
 	
+	
+	private void defualtScreen()
+	{
+		frameB.remove(button1);
+		frameB.remove(button2);
+		frameB.remove(button3);
+		topWindowText.setText("What would you like to do next");
+		button1.setText("Move");
+		button1.setActionCommand("move");
+		frameB.add(button1);
+		button2.setText("Stats");
+		button2.setActionCommand("stats");
+		frameB.add(button2);
+		refresh();
+		
+	}
 	
 	
 	// class within a class
@@ -109,16 +123,30 @@ public class Tester
 		if (arg0.getActionCommand().equals("rogue"))
 		{
 			
-			//insert code here
+				//set player to rogue by creating player object as ro
+				
+				defualtScreen();
 		}
 		
 		if (arg0.getActionCommand().equals("mage"))
 		{
 			
-			//insert code here
+				//set player to mage  by creating player object as mage
+			
+				defualtScreen();
+		}	
+		
+		if (arg0.getActionCommand().equals("move"))
+		{
+			
 		}
 		
+		if (arg0.getActionCommand().equals("stats"))
+		{
 			
+		}
+		
+		
 		}
 		
 		
@@ -130,7 +158,7 @@ public class Tester
 	JButton button1 = new JButton();
 	JButton button2 = new JButton();
 	JButton button3 = new JButton();
-	
+	Player player;
 	
 }
 
