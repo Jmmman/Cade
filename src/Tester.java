@@ -55,7 +55,7 @@ public class Tester
 	//should get called from setupGUI
 	private void startgame()
 	{
-	 topWindowText.setText("Whats your name");
+	 topWindowText.setText("What's your name?");
  nameField = new JTextField();
 	 
 	 //text that gets put in the ActionEvent when button is pressed
