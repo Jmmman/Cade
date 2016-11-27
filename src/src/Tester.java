@@ -1,17 +1,40 @@
 package src;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.File;
 import javax.swing.*;
+import javafx.application.Application;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.stage.Stage;
 
-public class Tester
+
+public class Tester extends Application
 {
 	public static void main(String[] args)
 	{
-		Tester a = new Tester();
+		  launch(args);
+	}
+	public void start(Stage primaryStage)
+	{
+		try 
+		{
+		
+			Media hit = new Media(new File("m.mp3").toURI().toString());
+			 mediaPlayer = new MediaPlayer(hit);
+			mediaPlayer.play();
+		
+		} 
+		
+		catch (Exception e) 
+		{
+			System.out.println(e.getMessage());
+		}
 	}
 	
 	public Tester()
 	{
+		
 		setupGUI();
 	}
 	
@@ -229,6 +252,10 @@ public class Tester
 	JButton button2 = new JButton();
 	JButton button3 = new JButton();
 	Player player;
+	MediaPlayer mediaPlayer;
+	
+
+	
 	
 }
 
