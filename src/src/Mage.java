@@ -1,3 +1,4 @@
+package src;
 import java.util.Random;
 
 public class Mage extends Player
@@ -17,13 +18,16 @@ public class Mage extends Player
 	}
 	public void move()
 	{
-		addX((gen.nextInt(20) + 1) - 10);
-		addY((gen.nextInt(20) + 1) - 10);
+		if(liveCheck())
+		{
+			addX((gen.nextInt(20) + 1) - 10);
+			addY((gen.nextInt(20) + 1) - 10);
 		
-		if (gen.nextInt(10) == 0)
-			damage(10);
-		if (gen.nextInt(8) == 0)
-			getKill();
+			if (gen.nextInt(10) == 0)
+				damage(10);
+			if (gen.nextInt(8) == 0)
+				getKill();
+		}
 	}
 	public String getStats()
 	{

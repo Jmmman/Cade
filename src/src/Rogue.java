@@ -1,3 +1,4 @@
+package src;
 import java.util.Random;
 
 public class Rogue extends Player
@@ -19,13 +20,16 @@ public class Rogue extends Player
 	}
 	public void move()
 	{
-		addX((gen.nextInt(50) + 1) - 25);
-		addY((gen.nextInt(50) + 1) - 25);
+		if (liveCheck())
+		{
+			addX((gen.nextInt(50) + 1) - 25);
+			addY((gen.nextInt(50) + 1) - 25);
 		
-		if (gen.nextInt(4) == 0)
-			damage(10);
-		if (gen.nextInt(5) == 0)
-			getSteal();
+			if (gen.nextInt(4) == 0)
+				damage(10);
+			if (gen.nextInt(5) == 0)
+				getSteal();
+		}
 	}
 	public String getStats()
 	{
