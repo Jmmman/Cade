@@ -27,7 +27,7 @@ public class Mage extends Player
 			if (gen.nextInt(10) == 0)
 				damage(10);
 			if (gen.nextInt(8) == 0)
-				getKill();
+				kills++;
 		}
 	}
 	public String[] getStats()

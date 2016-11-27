@@ -92,8 +92,38 @@ public class Tester
 		button2.setText("Stats");
 		button2.setActionCommand("stats");
 		frameB.add(button2);
+		isDead();
 		refresh();
 		
+	}
+	
+	
+	private void isDead()
+	{
+		if (!player.liveCheck())
+		{
+
+			frameT.remove(topWindowText2);
+			frameT.remove(topWindowText3);
+			frameT.remove(topWindowText4);
+			frameT.remove(topWindowText5);
+			frameB.remove(button1);
+			frameB.remove(button2);
+			frameB.remove(button3);
+			topWindowText.setText(player.getStats()[0]);
+			topWindowText2.setText(player.getStats()[1]);
+			topWindowText3.setText(player.getStats()[2]);
+			topWindowText4.setText(player.getStats()[3]);
+			topWindowText5.setText("He's dead Jim");
+			frameT.add(topWindowText2);
+			frameT.add(topWindowText3);
+			frameT.add(topWindowText4);
+			frameT.add(topWindowText5);
+			button1.setActionCommand("exit");
+			button1.setText("Exit");
+			frameB.add(button1);
+			refresh();
+		}
 	}
 	
 	
@@ -146,6 +176,7 @@ public class Tester
 		if (arg0.getActionCommand().equals("move"))
 		{
 			player.move();
+			isDead();
 		}
 		
 		if (arg0.getActionCommand().equals("stats"))
@@ -157,14 +188,28 @@ public class Tester
 			frameB.remove(button1);
 			frameB.remove(button2);
 			frameB.remove(button3);
-			topWindowText.setText(player.getStats() + "\n" + "\n" + "What do you want to do next?");
+			topWindowText.setText(player.getStats()[0]);
+			topWindowText2.setText(player.getStats()[1]);
+			topWindowText3.setText(player.getStats()[2]);
+			topWindowText4.setText(player.getStats()[3]);
+			topWindowText5.setText("What do you want to do next?");
+			frameT.add(topWindowText2);
+			frameT.add(topWindowText3);
+			frameT.add(topWindowText4);
+			frameT.add(topWindowText5);
 			button1.setText("Move");
 			button1.setActionCommand("move");
 			frameB.add(button1);
 			button2.setText("Stats");
 			button2.setActionCommand("stats");
 			frameB.add(button2);
+			isDead();
 			refresh();
+		}
+		
+		if(arg0.getActionCommand().equals("exit"))
+		{
+			System.exit(0);
 		}
 		
 		

@@ -28,7 +28,7 @@ public class Rogue extends Player
 			if (gen.nextInt(4) == 0)
 				damage(10);
 			if (gen.nextInt(5) == 0)
-				getSteal();
+				steal++;
 		}
 	}
 	public String[] getStats()
