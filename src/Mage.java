@@ -1,4 +1,5 @@
 
-public class Mage {
+public class Mage 
+{
 
 }

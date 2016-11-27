@@ -93,7 +93,7 @@ public class Tester
 		{
 			playerName = nameField.getText();
 			frameB.remove(nameField);
-			topWindowText.setText("hello: " + playerName + " Chose a class");
+			topWindowText.setText("Hello, " + playerName + ". Choose a class.");
 			button1.setText("Rogue");
 			button2.setText("Mage");
 			button1.setActionCommand("rogue");
