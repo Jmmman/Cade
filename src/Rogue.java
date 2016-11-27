@@ -6,6 +6,7 @@ public class Rogue extends Player
 	{
 		super(name);
 		steal = 0;
+		gen = new Random();
 		
 	}
 	public int getSteal()
