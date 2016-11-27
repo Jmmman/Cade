@@ -30,9 +30,14 @@ public class Mage extends Player
 				getKill();
 		}
 	}
-	public String getStats()
+	public String[] getStats()
 	{
-		return super.getStats() + "Kills: " + kills;
+		String[] a = new String[4];
+		a[0] = "Name: " + getName();
+		a[1] = "HP: " + getHP();
+		a[2] = "Location: " + getX() + ", " + getY();
+		a[3] = "Kills: " + getKill();
+		return a;
 	}
 	private Random gen;
 	private int kills;

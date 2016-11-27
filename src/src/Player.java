@@ -68,7 +68,11 @@ public class Player
 	}
 	public String[] getStats()
 	{
-		return ;
+		String[] a = new String[3];
+		a[0] = "Name: " + getName();
+		a[1] = "HP: " + getHP();
+		a[2] = "Location: " + getX() + ", " + getY();
+		return a;
 	}
 	private int health;
 	private int locY;

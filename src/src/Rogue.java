@@ -31,9 +31,14 @@ public class Rogue extends Player
 				getSteal();
 		}
 	}
-	public String getStats()
+	public String[] getStats()
 	{
-		return super.getStats() + "Steals: " + steal;
+		String[] a = new String[4];
+		a[0] = "Name: " + getName();
+		a[1] = "HP: " + getHP();
+		a[2] = "Location: " + getX() + ", " + getY();
+		a[3] = "Steals: " + getSteal();
+		return a;
 	}
 	private Random gen;
 	private int steal;
